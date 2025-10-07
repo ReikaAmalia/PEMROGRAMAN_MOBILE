@@ -18,3 +18,12 @@ samples, guidance on mobile development, and a full API reference.
 
 ![screenshots hello_world](image/Mobile.5.1.png)
 
+
+## Praktikum 2
+### Menghubungkan ke perangkat android
+![praktikum 2](image/Mobile.5.2.png)
+
+## Praktikum 4
+### Text Widget
+![praktikum 4.1](image/mobile.5.3.png)
+
