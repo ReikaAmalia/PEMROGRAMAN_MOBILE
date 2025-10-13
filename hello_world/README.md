@@ -32,7 +32,23 @@ samples, guidance on mobile development, and a full API reference.
 
 
 ## Praktikum 5
-### Cupertino Button dan Loading Bar
-1. Sebelum tombol ditekan
+### Menerapkan Widget Material Design dan iOS Cupertino
+ Langkah 1: Cupertino Button dan Loading Bar
+ ![praktikum 5.1](image/mobile.5.5.png)
 
-2. Setelah tombol ditekan
+ Langkah 2: Floating Action Button (FAB)
+ ![praktikum 5.2](image/mobile.5.6.png)
+
+ Langkah 3: Scaffold Widget
+ ![praktikum 5.3](image/mobile.5.7.png)
+
+ Langkah 4: Dialog Widget
+ ![praktikum 5.4](image/mobile.5.8.png)
+
+ Langkah 5: Input dan Selection Widget
+ ![praktikum 5.5](image/mobile.5.9.png)
+
+ Langkah 6: Date and Time Pickers
+ ![praktikum 5.6](image/mobile.5.10.png)
+
+ 

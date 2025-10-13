@@ -6,8 +6,8 @@ class LoadingCupertino extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Container(
+    return  
+    Container(
         margin: const EdgeInsets.only(top: 30),
         color: Colors.white,
         child: Column(
@@ -19,7 +19,6 @@ class LoadingCupertino extends StatelessWidget {
             const CupertinoActivityIndicator(),
           ],
         ),
-      ),
-    );
+      );
   }
 }
