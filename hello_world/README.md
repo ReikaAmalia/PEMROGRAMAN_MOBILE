@@ -18,10 +18,21 @@ samples, guidance on mobile development, and a full API reference.
 
 ![screenshots hello_world](image/Mobile.5.1.png)
 
+
+## Praktikum 2
+### Menghubungkan ke perangkat android
+![praktikum 2](image/Mobile.5.2.png)
+
+## Praktikum 4
+### Langkah 1: Text Widget
+![praktikum 4.1](image/mobile.5.3.png)
+
+### Langkah 2: Image Widget
+![praktikum 4.2](image/mobile.5.4.png)
+
+
 ## Praktikum 5
-### Menerapkan Widget Material Design dan iOS Cupertino
+### Cupertino Button dan Loading Bar
 1. Sebelum tombol ditekan
 
-2. Setelah tombol ditekan
-
-
+2. Setelah tombol ditekan
