@@ -2,6 +2,25 @@
 
 A new Flutter project.
 
+## Praktikum 1
+### Membangun Layout di Flutter
+![praktikum 1](image/mobile.6.1.png)
+
+## Praktikum 2
+### Implementasi button row
+![praktikum 2](image/mobile.6.2.png)
+
+## Praktikum 3
+### Implementasi text section
+![praktikum 3](image/mobile.6.3.png)
+
+## Praktikum 4
+### Implementasi image section
+
+
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
