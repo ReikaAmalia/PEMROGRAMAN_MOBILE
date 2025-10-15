@@ -16,6 +16,7 @@ A new Flutter project.
 
 ## Praktikum 4
 ### Implementasi image section
+![praktikum 4](image/mobile.6.4.png)
 
 
 
