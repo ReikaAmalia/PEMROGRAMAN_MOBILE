@@ -18,6 +18,18 @@ A new Flutter project.
 ### Implementasi image section
 ![praktikum 4](image/mobile.6.4.png)
 
+### Tugas Praktikum 1
+1. Selesaikan Praktikum 1 sampai 4, lalu dokumentasikan dan push ke repository Anda berupa screenshot setiap hasil pekerjaan beserta penjelasannya di file README.md!
+2. Silakan implementasikan di project baru "basic_layout_flutter" dengan mengakses sumber ini: https://docs.flutter.dev/codelabs/layout-basics
+3. Kumpulkan link commit repository GitHub Anda kepada dosen yang telah disepakati!
+![TUGAS PRAKTIKUM 1](image/mobile.6.5.png)
+
+## Praktikum 5
+### Membangun Navigasi di Flutter
+
+
+
+
 
 
 
