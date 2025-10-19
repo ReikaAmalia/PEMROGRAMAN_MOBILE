@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import '../models/item.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key}); // ✅ hapus const
+  HomePage({super.key}); 
 
   final List<Item> items = [
     Item(
@@ -47,7 +48,7 @@ class HomePage extends StatelessWidget {
           final item = items[index];
           return InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '/item', arguments: item);
+              context.push('/item', extra: item);
             },
             child: Card(
               shape: RoundedRectangleBorder(

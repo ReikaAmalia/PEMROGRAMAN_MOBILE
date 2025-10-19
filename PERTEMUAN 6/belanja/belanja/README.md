@@ -33,6 +33,8 @@ final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
 ![soal no 4](image/mobile.6.5.7.png)
 
 5. Sesuaikan dan modifikasi tampilan sehingga menjadi aplikasi yang menarik. Selain itu, pecah widget menjadi kode yang lebih kecil. Tambahkan Nama dan NIM di footer aplikasi belanja Anda.
+![soal no 5](image/mobile.6.5.8.png)
+
 
 
 

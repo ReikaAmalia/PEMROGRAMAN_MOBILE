@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import '../models/item.dart';
 
 class ItemPage extends StatelessWidget {
-  const ItemPage({super.key});
+  const ItemPage({super.key, required this.item});
+
+  final Item item;
 
   @override
   Widget build(BuildContext context) {
-    final item = ModalRoute.of(context)!.settings.arguments as Item;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(item.name),
