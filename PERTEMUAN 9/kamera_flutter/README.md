@@ -1,13 +1,3 @@
-# Praktikum Flutter - Kamera dan Filter Carousel
-
-## Praktikum 1: Mengambil Foto dengan Kamera di Flutter
-![hasil prakikum 1](image/praktikum_1.jpg)
-
-
-
-
-
-
 A new Flutter project.
 
 ## Getting Started
