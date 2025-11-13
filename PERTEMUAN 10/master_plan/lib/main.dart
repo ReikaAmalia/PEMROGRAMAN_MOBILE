@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import './views/plan_screen.dart';
-import './models/data_layer.dart';
-import './providers/plan_provider.dart';
+import 'models/data_layer.dart';
+import 'providers/plan_provider.dart';
+import 'views/plan_creator_screen.dart';
 
 void main() => runApp(const MasterPlanApp());
 
@@ -10,13 +10,13 @@ class MasterPlanApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Master Plan',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.purple),
-      home: PlanProvider(
-        notifier: ValueNotifier<Plan>(const Plan(name: 'Rencana Utama')),
-        child: const PlanScreen(),
+    return PlanProvider(
+      notifier: ValueNotifier<List<Plan>>([]),
+      child: MaterialApp(
+        title: 'Master Plan Rere',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.purple),
+        home: const PlanCreatorScreen(),
       ),
     );
   }
