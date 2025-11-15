@@ -60,8 +60,7 @@ Hasil Praktikum 3
 
 3. Lakukan capture hasil dari Langkah 14 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
 
-![praktikum 3.1](image/mobile.10.3.png)
-![praktikum 3.2](image/mobile.10.4.png)
+![hasil langkah 14 praktikum 3](image/mobile.10.6.gif)
 - GIF yang ditampilkan merupakan dokumentasi visual dari hasil implementasi Praktikum 3, khususnya fitur untuk membuat dan mengelola daftar rencana beserta tugas-tugasnya. GIF tersebut memperlihatkan seluruh alur penggunaan aplikasi, mulai dari pembuatan plan baru hingga penandaan tugas sebagai selesai.
 
 Dalam GIF, pengguna dapat terlihat melakukan langkah-langkah berikut:
