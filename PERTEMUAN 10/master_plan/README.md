@@ -3,7 +3,11 @@
 
 ## Praktikum 1: Dasar State dengan Model-View
 Pada praktikum 1 ini bertujuan untuk membuat aplikasi sederhana bernama Master Plan menggunakan Flutter, di mana pengguna dapat menambahkan, mengedit, dan menandai tugas yang sudah selesai. Praktikum ini melatih pemahaman tentang penggunaan StatefulWidget, pengelolaan state dengan setState(), serta penerapan model data untuk menyimpan daftar tugas agar tampilan aplikasi dapat berubah secara dinamis sesuai interaksi pengguna.
+
+
 ![praktikum 1](image/mobile.10.1.png)
+
+
 ![gif praktikum 1](image/mobile-prak-1-ezgif.com-video-to-gif-converter.gif)
 
 ## Tugas Praktikum 1: Dasar State dengan Model-View
