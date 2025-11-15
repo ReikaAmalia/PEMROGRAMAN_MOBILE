@@ -1,7 +1,11 @@
+// lib/views/plan_creator_screen.dart
 import 'package:flutter/material.dart';
 import '../models/data_layer.dart';
 import '../providers/plan_provider.dart';
 import 'plan_screen.dart';
+
+const Color kPurpleColor = Color(0xFF9C27B0);
+const Color kBackgroundColor = Color(0xFFF3E5F5);
 
 class PlanCreatorScreen extends StatefulWidget {
   const PlanCreatorScreen({super.key});
@@ -11,7 +15,7 @@ class PlanCreatorScreen extends StatefulWidget {
 }
 
 class _PlanCreatorScreenState extends State<PlanCreatorScreen> {
-  final textController = TextEditingController();
+  final TextEditingController textController = TextEditingController();
 
   @override
   void dispose() {
@@ -19,89 +23,110 @@ class _PlanCreatorScreenState extends State<PlanCreatorScreen> {
     super.dispose();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Master Plans Rere')),
-      body: Column(
-        children: [
-          _buildListCreator(),
-          Expanded(child: _buildMasterPlans()),
-        ],
-      ),
-      backgroundColor: const Color(0xFFF3E5F5),
-    );
-  }
-
-  Widget _buildListCreator() {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Material(
-        color: Colors.white,
-        elevation: 5,
-        borderRadius: BorderRadius.circular(10),
-        child: TextField(
-          controller: textController,
-          decoration: const InputDecoration(
-            labelText: 'Add a plan',
-            contentPadding: EdgeInsets.all(20),
-            border: InputBorder.none,
-          ),
-          onEditingComplete: addPlan,
-        ),
-      ),
-    );
-  }
-
   void addPlan() {
-    final text = textController.text;
+    final text = textController.text.trim();
     if (text.isEmpty) return;
 
-    final plan = Plan(name: text, tasks: []);
-    ValueNotifier<List<Plan>> planNotifier = PlanProvider.of(context);
-    planNotifier.value = List<Plan>.from(planNotifier.value)..add(plan);
+    final newPlan = Plan(name: text, tasks: []);
+    final notifier = PlanProvider.of(context);
+    notifier.value = List<Plan>.from(notifier.value)..add(newPlan);
+
     textController.clear();
     FocusScope.of(context).requestFocus(FocusNode());
-    setState(() {});
+    setState(() {}); // update to show list immediately
   }
 
-  Widget _buildMasterPlans() {
-    ValueNotifier<List<Plan>> planNotifier = PlanProvider.of(context);
-    List<Plan> plans = planNotifier.value;
+  @override
+  Widget build(BuildContext context) {
+    final plansNotifier = PlanProvider.of(context);
 
-    if (plans.isEmpty) {
-      return Center(
+    return Scaffold(
+      backgroundColor: kBackgroundColor,
+      appBar: AppBar(
+        title: const Text('Master Plans Rere'),
+        backgroundColor: kPurpleColor,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(Icons.note, size: 100, color: Colors.grey),
-            SizedBox(height: 10),
-            Text('Anda belum memiliki rencana apapun.',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+          children: [
+            // Creator input + button
+            Material(
+              elevation: 4,
+              borderRadius: BorderRadius.circular(8),
+              color: Colors.white,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: TextField(
+                        controller: textController,
+                        decoration: const InputDecoration(
+                          hintText: 'Add a plan',
+                          border: InputBorder.none,
+                        ),
+                        onSubmitted: (_) => addPlan(),
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: addPlan,
+                    icon: const Icon(Icons.add_circle),
+                    color: kPurpleColor,
+                    iconSize: 28,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 14),
+
+            // List of plans
+            Expanded(
+              child: ValueListenableBuilder<List<Plan>>(
+                valueListenable: plansNotifier,
+                builder: (context, plans, child) {
+                  if (plans.isEmpty) {
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.note, size: 100, color: Colors.grey),
+                          SizedBox(height: 12),
+                          Text('Anda belum memiliki rencana apapun.',
+                              style: TextStyle(fontSize: 16)),
+                        ],
+                      ),
+                    );
+                  }
+
+                  return ListView.builder(
+                    itemCount: plans.length,
+                    itemBuilder: (context, index) {
+                      final p = plans[index];
+                      return Card(
+                        margin:
+                            const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                        child: ListTile(
+                          title: Text(p.name),
+                          subtitle: Text(p.completenessMessage),
+                          trailing:
+                              const Icon(Icons.arrow_forward_ios, size: 16),
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (_) => PlanScreen(plan: p),
+                            ));
+                          },
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
           ],
         ),
-      );
-    }
-
-    return ListView.builder(
-      itemCount: plans.length,
-      itemBuilder: (context, index) {
-        final plan = plans[index];
-        return Card(
-          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          child: ListTile(
-            title: Text(plan.name),
-            subtitle: Text(plan.completenessMessage),
-            trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 16),
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (_) => PlanScreen(plan: plan),
-              ));
-            },
-          ),
-        );
-      },
+      ),
     );
   }
 }

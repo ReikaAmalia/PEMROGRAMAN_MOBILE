@@ -1,3 +1,4 @@
+// lib/providers/plan_provider.dart
 import 'package:flutter/material.dart';
 import '../models/data_layer.dart';
 
@@ -9,6 +10,9 @@ class PlanProvider extends InheritedNotifier<ValueNotifier<List<Plan>>> {
   }) : super(child: child, notifier: notifier);
 
   static ValueNotifier<List<Plan>> of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<PlanProvider>()!.notifier!;
+    final provider =
+        context.dependOnInheritedWidgetOfExactType<PlanProvider>();
+    assert(provider != null, 'No PlanProvider found in context');
+    return provider!.notifier!;
   }
 }

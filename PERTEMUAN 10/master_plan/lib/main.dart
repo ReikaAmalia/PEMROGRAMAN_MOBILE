@@ -1,3 +1,4 @@
+// lib/main.dart
 import 'package:flutter/material.dart';
 import 'models/data_layer.dart';
 import 'providers/plan_provider.dart';
@@ -11,7 +12,13 @@ class MasterPlanApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlanProvider(
-      notifier: ValueNotifier<List<Plan>>([]),
+      notifier: ValueNotifier<List<Plan>>([
+        // optional: seed sample plan
+        const Plan(name: 'Rencana Utama', tasks: [
+          Task(description: 'Contoh tugas 1', complete: true),
+          Task(description: 'Contoh tugas 2', complete: false),
+        ]),
+      ]),
       child: MaterialApp(
         title: 'Master Plan Rere',
         debugShowCheckedModeBanner: false,
