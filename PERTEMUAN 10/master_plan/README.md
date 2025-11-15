@@ -49,7 +49,7 @@ Sedangkan di praktikum 2, data disimpan menggunakan InheritedNotifier (melalui P
 
 ## Praktikum 3: Membuat State di Multiple Screens
 
-Hasil Praktikum 3
+### Hasil Praktikum 3
 ![praktikum 3.1](image/mobile.10.3.png)
 ![praktikum 3.2](image/mobile.10.4.png)
 
